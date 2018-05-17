@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Trend Information</h1>
+    <form #trendInput="ngForm" (ngSubmit)="checkTrend(trendInput)">
+      <div class="form-group">
+        <label for="trned">Enter the trend</label>
+        <input type="text" class="form-control" name="trend" required ngModel>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+<div class="container">
+    <h1>User Information</h1>
+    <form #userInput="ngForm" (ngSubmit)="checkUser(userInput)"> 
+      <div class="form-group">
+        <label for="user">User Tweets</label>
+        <input type="text" class="form-control" name="user"
+        required ngModel>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
