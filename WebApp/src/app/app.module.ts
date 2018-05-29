@@ -3,21 +3,19 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule }     from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginMysqlService } from './services/login.service';
-import { RegisterMysqlService } from './services/register.service';
-import { LogoutMysqlService } from './services/logout.service';
+import { DatabaseMysqlService } from './services/database.service';
+import { InternetMysqlService } from './services/internet.service';
+import { CommunicationService } from './services/communication.service';
+import { XMLService } from './services/file.service';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { SchedulerComponent } from './scheduler/scheduler.component';
+import { DatabaseComponent } from './database/database.component';
 import { InternetComponent }  from './internet/internet.component';
 import { HardwareComponent }  from './hardware/hardware.component';
 import { CommunicationComponent }  from './communication/communication.component';
-import { UpdateComponent }  from './update/update.component';
-import { LogoutComponent }  from './logout/logout.component';
+import { UiComponent }  from './ui/ui.component';
+import { ComputationComponent }  from './computation/computation.component';
 import {CdkTableModule} from '@angular/cdk/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
@@ -98,15 +96,12 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    HomeComponent,
-    LoginComponent,
-    SchedulerComponent,
+    DatabaseComponent,
     InternetComponent,
     HardwareComponent,
     CommunicationComponent,
-    UpdateComponent,
-    LogoutComponent
+    UiComponent,
+    ComputationComponent
   ],
 
   imports: [
@@ -120,9 +115,10 @@ import {
     BrowserAnimationsModule
   ],
   providers: [
-    LoginMysqlService,
-    RegisterMysqlService,
-    LogoutMysqlService
+    DatabaseMysqlService,
+    InternetMysqlService,
+    CommunicationService,
+    XMLService
   ],
   bootstrap: [AppComponent,
   ]

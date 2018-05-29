@@ -5,18 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 @Injectable()
-  
-export class LoginMysqlService {
-
-    URL = "http://localhost/userauth.php"
+export class XMLService {
 
     headers = new Headers({ 'Content-Type': 'application/json' });
     options = new RequestOptions({ headers: this.headers });
 
-    constructor(private _http:Http) { }
+    constructor(private _http: Http) {}
 
-    public getMysqlUsersDatas(user,pass) {
-        return this._http.post(this.URL,{user,pass},this.options)
+    URL = "http://localhost/file.php";
+
+
+    public getXMLData() {
+        return this._http.get(this.URL,{})
           .pipe(map(rep => rep.json()));         
     }
+
 }

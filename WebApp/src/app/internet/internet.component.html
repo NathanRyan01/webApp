@@ -1,22 +1,16 @@
-<div class="container">
-    <h1>Trend Information</h1>
-    <form #trendInput="ngForm" (ngSubmit)="checkTrend(trendInput)">
-      <div class="form-group">
-        <label for="trned">Enter the trend</label>
-        <input type="text" class="form-control" name="trend" required ngModel>
-      </div>
-      <button type="submit" class="btn btn-success">Submit</button>
-    </form>
+<h2>Wikipedia Get Request</h2>
+<div> 
+  <label for="get">Click enter to retrieve Wikipedia Information</label>
+  <button (click)="GetRequest()">Submit</button>
+</div> 
+<div>
+    <p>The total time for the data to be returned: {{getTime}} milliseconds</p>
 </div>
-
-<div class="container">
-    <h1>User Information</h1>
-    <form #userInput="ngForm" (ngSubmit)="checkUser(userInput)"> 
-      <div class="form-group">
-        <label for="user">User Tweets</label>
-        <input type="text" class="form-control" name="user"
-        required ngModel>
-      </div>
-      <button type="submit" class="btn btn-success">Submit</button>
-    </form>
+<h2>Wikipedia Post Request</h2>
+<div> 
+  <label for="post">Click enter to post email</label>
+  <button (click)="PostRequest()">Submit</button>
+</div> 
+<div>
+    <p>The total time for the data to be returned: {{postTime}} milliseconds</p>
 </div>

@@ -1,0 +1,42 @@
+<h2 class="heading">Database Interaction - Person And Other Table</h2>
+<div> 
+    <input type="text" placeholder= "Row" [(ngModel)]="id1">
+    <button (click)="onSelectOne(id1)">Select From Person Table</button>
+</div> 
+<div>
+    <p>The total time for the data to be returned: {{selectOneTime}} milliseconds</p>
+</div>
+<div> 
+    <input type="text" placeholder= "Row" [(ngModel)]="id2">
+    <input type="text" placeholder= "Value" [(ngModel)]="updateValue">
+    <button (click)="onUpdate(id2,updateValue)">Update Person Table</button>
+</div> 
+<div>
+    <p>The total time for the data to be updated: {{updateTime}} milliseconds</p>
+</div>
+<div> 
+    <input type="text" placeholder= "Number of rows" [(ngModel)]="insertValue">
+    <button (click)="onInsert(insertValue)">Insert Into Both Tables</button>
+</div> 
+<div>    <p>The total time for the data to be updated: {{insertTime}} milliseconds</p>
+</div>
+<div> 
+    <button (click)="onSelectAll()">Select All Rows From Person Table</button>
+</div> 
+<div>
+    <p>The total time for the data to be updated: {{selectAllTime}} milliseconds</p>
+</div>
+<div> 
+    <button (click)="onSelectAllJoin()">Select All Rows From Two Tables</button>
+</div>
+<div>
+    <p>The total time for the data to be returned: {{selectAllJoinTime}} milliseconds</p>
+</div> 
+<div> 
+    <button (click)="onDelete()">Delete All Rows From Both Tables</button>
+</div> 
+<div>
+        <p>The total time for the data to be deleted: {{deleteTime}} milliseconds</p>
+</div>
+
+

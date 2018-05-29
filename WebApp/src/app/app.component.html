@@ -5,8 +5,12 @@
   </h1>
 </div>
 <nav style="text-align:center">
-  <a routerLink="/login"> Login</a>
-  <a routerLink="/register" >Register</a>
+  <a [routerLink]="['database']">Database</a>
+  <a [routerLink]="['internet']">Internet</a>
+  <a [routerLink]="['hardware']">Hardware</a>
+  <a [routerLink]="['communication']">Communication</a>
+  <a [routerLink]="['ui']">UI Interaction</a>
+  <a [routerLink]="['computation']">Computation</a>
 </nav>
 <router-outlet></router-outlet>
 

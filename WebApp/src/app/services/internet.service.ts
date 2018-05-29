@@ -5,17 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 @Injectable()
-export class LogoutMysqlService {
+export class InternetMysqlService {
 
     constructor(private _http: Http) {}
 
-    URL = "http://localhost/update.php"
+    GetURL = "http://localhost/wiki.php";
+    EmailUrl = "http://localhost/email.php";
 
-    headers = new Headers({ 'Content-Type': 'application/json' });
-    options = new RequestOptions({ headers: this.headers });
+    public getWikiData() {
+        return this._http.get(this.GetURL,{})
+          .pipe(map(rep => rep.json()));         
+    }
 
-    public updateData(team,wrestler,capital,user) {
-        return this._http.post(this.URL,{team,wrestler,capital,user},this.options)
+    public postEmail() {
+        return this._http.get(this.EmailUrl,{})
           .pipe(map(rep => rep.json()));         
     }
 }

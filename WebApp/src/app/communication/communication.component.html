@@ -1,9 +1,3 @@
-<div *ngFor="let message of messages">
-    {{message}}
-    {{user}}
+<div class="row row-runs">
+    
 </div>
-
-<input [(ngModel)]="user" placeholder= "Username" (keyup)="$event.keyCode == 13 && sendMessage()" />
-<input [(ngModel)]="message" placeholder= "Comment" (keyup)="$event.keyCode == 13 && sendMessage()" />
-
-<button (click)="sendMessage()">Send</button>

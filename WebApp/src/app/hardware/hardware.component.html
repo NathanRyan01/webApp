@@ -1,30 +1,53 @@
 <div class="row row-runs">
-    <h2 class="heading">Distance Tracker</h2>
-    <input type="text" placeholder= "Longitude" [(ngModel)]="value1">
-    <input type="text" placeholder= "Latitude" [(ngModel)]="value2">
-    <button (click)="getLocation(value1,value2)">Add row</button>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Chosen Longitude</th>
-          <th>Chosen Latitude</th>
-          <th>Current Longitude</th>
-          <th>Current Latitude</th>
-          <th>Date</th>
-          <th>Distance</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let activity of activities">
-          <td>
-            <a [routerLink] ="['/run', activity.id]">
-              {{ activity.name }}
-            </a>
-          </td>
-          <td>{{ activity.comments }}</td>
-          <td>{{ activity.date | date:"yyyy-MM-dd"}}</td>
-          <td>{{ activity.distance }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <h2 class="heading">Current Location</h2>
+    <button (click)="getLocation()">Get Location</button>
+</div>
+<div class="row row-runs">
+    <p> ---------------------------------------------</p>
+  <div *ngFor="let loc of location">
+          <p> Latitude : {{loc.lat}}</p>
+          <p> Longitude : {{loc.long}} </p>
+          <p> Current Time : {{loc.date | date:'HH:mm:ss'}}</p>
+          <p> ---------------------------------------------</p>
+</div>
+</div>
+<div class="row row-runs">
+    <p>The total time to get the location: {{locationTime}} milliseconds</p>
+</div>
+<div class="row row-runs">
+    <h2 class="heading">Upload Image - JPEG Or PNG</h2>
+       <input type="file" (change)="showImage($event)">
+       <img [src]="localUrl" *ngIf="localUrl" class="imgPlaceholder">
+</div>
+<div class="row row-runs">
+  <p>{{message}}</p>
+</div>
+<div class="row row-runs">
+    <p>The total time get the image from the file sustem and display: {{imageTime}} milliseconds</p>
+</div>
+<div class="row row-runs">
+    <h2 class="heading">Screen Information From Window Object</h2>
+          <p>Screen Width: {{width}}</p>
+          <p>Screen Height: {{height}} </p>
+          <p>Browser Info: {{browser}} </p>
+          <button (click)="ScreenInfo()">Request</button>
+</div>
+<div class="row row-runs">
+    <p>The total time get the information form the window object: {{windowTime}} milliseconds</p>
+</div>
+<div class="row row-runs">
+    <h2 class="heading">Access Camera</h2>
+    <div class="col-md-12 text-left"></div>
+        <video #videoElement height="150"></video>
+        <div>
+        <button (click)="play()">Record</button>
+        <button (click)="stop()">Stop</button>
+        </div>
+</div>
+<div class="row row-runs">
+    <p>The total time to start recording: {{recordStartTime}} milliseconds</p>
+    <p>The total time to stop recording: {{recordStopTime}} milliseconds</p>
+</div>
+
+
+  

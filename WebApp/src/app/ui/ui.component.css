@@ -1,5 +1,12 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+div{
+  margin-top: 10px;
+}
+
+ol {
+  border-style: double;
+}
 .example-container {
     display: flex;
     flex-direction: column;
@@ -19,4 +26,6 @@
   .mat-slider-horizontal {
     width: 300px;
   }
+
+
   

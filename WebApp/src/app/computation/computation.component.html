@@ -1,0 +1,10 @@
+<div> 
+  <h2 class="heading">Enter the requested matrix size</h2>
+  <input type="text" placeholder= "Matrix Size" [(ngModel)]="matrixSize">
+  <button (click)="computeMatrix(matrixSize)">Compute</button>
+</div> 
+<div>
+    <p>The total time for computation: {{time}} milliseconds</p>
+</div>
+     
+          

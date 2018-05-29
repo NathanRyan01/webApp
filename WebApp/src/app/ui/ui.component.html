@@ -34,12 +34,22 @@
     </table>
 
     <mat-paginator #paginator
-                 [pageSize]="10"
+                 [pageSize]="5"
                  [pageSizeOptions]="[5, 10, 20]"
                  [showFirstLastButtons]="true">
   </mat-paginator>
+  </div>
 
-  
+    <div class="example-container">
+        <ol>
+        <div *ngFor="let d of data">
+             <li>{{d.NAME}} : {{d.COMPANY}}</li>
+        </div>
+      </ol>     
+  </div>
+  <div>
+      <button (click)="getList()">Get List</button>
+      <p>The total time to get the list from the xml file: {{listTime}} milliseconds</p>
   </div>
 
 <div class="example-container">
