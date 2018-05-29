@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DatabaseMysqlService } from './services/database.service';
 import { InternetMysqlService } from './services/internet.service';
-import { CommunicationService } from './services/communication.service';
+import { NetworkService } from './services/network.service';
 import { XMLService } from './services/file.service';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -13,8 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatabaseComponent } from './database/database.component';
 import { InternetComponent }  from './internet/internet.component';
 import { HardwareComponent }  from './hardware/hardware.component';
-import { CommunicationComponent }  from './communication/communication.component';
-import { UiComponent }  from './ui/ui.component';
+import { NetworkComponent }  from './network/network.component';
+import { FileComponent }  from './file/file.component';
 import { ComputationComponent }  from './computation/computation.component';
 import {CdkTableModule} from '@angular/cdk/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -99,8 +99,8 @@ import {
     DatabaseComponent,
     InternetComponent,
     HardwareComponent,
-    CommunicationComponent,
-    UiComponent,
+    NetworkComponent,
+    FileComponent,
     ComputationComponent
   ],
 
@@ -117,7 +117,7 @@ import {
   providers: [
     DatabaseMysqlService,
     InternetMysqlService,
-    CommunicationService,
+    NetworkService,
     XMLService
   ],
   bootstrap: [AppComponent,

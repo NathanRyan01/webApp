@@ -8,7 +8,7 @@ import { HttpModule } from '@angular/http';
 
 
 @Injectable()
-export class CommunicationService {
+export class NetworkService {
 
     chatSelectURL = "http://localhost/chatSelect.php";
     chatDeleteURL = "http://localhost/chatDelete.php";
