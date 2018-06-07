@@ -14,8 +14,8 @@ export class ComputationComponent {
       var start = performance.now();
       var matrixOne, matrixTwo;
       var n = Number(matrixSize);
-      matrixOne = Array(n).fill(null).map(() => Array(n).fill(4));
-      matrixTwo = Array(n).fill(null).map(() => Array(n).fill(4));
+      matrixOne = Array(n).fill(null).map(() => Array(n).fill(n));
+      matrixTwo = Array(n).fill(null).map(() => Array(n).fill(n));
       var count = 0;
       for(var i = 0; i < n; i++ ){
         for(var j = 0; j < n; j++ ){

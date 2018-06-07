@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatabaseComponent } from './database/database.component';
 import { InternetComponent }  from './internet/internet.component';
 import { HardwareComponent }  from './hardware/hardware.component';
-import { NetworkComponent }  from './network/network.component';
+import { MediaComponent }  from './media/media.component';
 import { FileComponent }  from './file/file.component';
 import { ComputationComponent }  from './computation/computation.component';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -99,7 +99,7 @@ import {
     DatabaseComponent,
     InternetComponent,
     HardwareComponent,
-    NetworkComponent,
+    MediaComponent,
     FileComponent,
     ComputationComponent
   ],

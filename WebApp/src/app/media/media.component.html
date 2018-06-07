@@ -1,0 +1,35 @@
+<div>
+    <h2 class="row row-runs">Audio</h2>
+    <div>
+        <button (click)="playAudio()">Start Song</button>
+    </div>
+    <div>    
+        <p>The total time for the audio to start : {{startSong}} milliseconds</p>
+    </div>
+    <div>
+        <button (click)="pauseAudio()">Stop Song</button>
+    </div>
+    <div>    
+            <p>The total time for the audio to stop : {{stopSong}} milliseconds</p>
+    </div>
+</div>
+<div>
+    <h2 class="row row-runs">Visual</h2>
+    <div>
+        <video width="320" height="240" #videoPlayer>
+            <source id="mp4_src" src={{videoSource}} type="video/mp4">
+        </video>
+    </div>
+    <div>
+        <button (click)="playVideo()">Start Video</button>
+    </div>
+    <div>    
+        <p>The total time for the video to start : {{startVideo}} milliseconds</p>
+    </div>
+    <div>
+        <button (click)="pauseVideo()">Stop Video</button>
+    </div>
+    <div>    
+        <p>The total time for the video to start : {{stopVideo}} milliseconds</p>
+    </div>
+</div>

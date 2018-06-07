@@ -20,7 +20,6 @@ export class DatabaseComponent{
    selectAllTime;
    selectAllJoinTime;
    deleteTime;
-   time;
 
    constructor(private query: DatabaseMysqlService) { }
    onSelectAll(){
