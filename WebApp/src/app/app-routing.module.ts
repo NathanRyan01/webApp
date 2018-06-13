@@ -6,6 +6,7 @@ import { HardwareComponent }  from './hardware/hardware.component';
 import { MediaComponent }  from './media/media.component';
 import { FileComponent }  from './file/file.component';
 import { ComputationComponent }  from './computation/computation.component';
+import { CommunicationComponent }  from './communication/communication.component';
 
 const routes: Routes = [
     {path: 'database', component: DatabaseComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
     {path: 'media', component: MediaComponent},
     {path: 'file', component: FileComponent},
     {path: 'computation', component: ComputationComponent},
+    {path: 'communication', component: CommunicationComponent},
  ];
 
 @NgModule({

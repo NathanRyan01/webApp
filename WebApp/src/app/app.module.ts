@@ -7,12 +7,15 @@ import { DatabaseMysqlService } from './services/database.service';
 import { InternetMysqlService } from './services/internet.service';
 import { NetworkService } from './services/network.service';
 import { XMLService } from './services/file.service';
+import { CommunicationService } from './services/communication.service';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { WebBluetoothModule } from '@manekinekko/angular-web-bluetooth';
 import { DatabaseComponent } from './database/database.component';
 import { InternetComponent }  from './internet/internet.component';
 import { HardwareComponent }  from './hardware/hardware.component';
+import { CommunicationComponent }  from './communication/communication.component';
 import { MediaComponent }  from './media/media.component';
 import { FileComponent }  from './file/file.component';
 import { ComputationComponent }  from './computation/computation.component';
@@ -101,9 +104,12 @@ import {
     HardwareComponent,
     MediaComponent,
     FileComponent,
-    ComputationComponent
+    ComputationComponent,
+    CommunicationComponent,
   ],
-
+    entryComponents: [
+      CommunicationComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -112,13 +118,17 @@ import {
     HttpClientModule,
     MaterialModules,
     CdkTableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    WebBluetoothModule.forRoot(
+      {enableTracing: true}
+    )
   ],
   providers: [
     DatabaseMysqlService,
     InternetMysqlService,
     NetworkService,
-    XMLService
+    XMLService,
+    CommunicationService
   ],
   bootstrap: [AppComponent,
   ]
