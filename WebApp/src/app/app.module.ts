@@ -11,7 +11,6 @@ import { CommunicationService } from './services/communication.service';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { WebBluetoothModule } from '@manekinekko/angular-web-bluetooth';
 import { DatabaseComponent } from './database/database.component';
 import { InternetComponent }  from './internet/internet.component';
 import { HardwareComponent }  from './hardware/hardware.component';
@@ -119,9 +118,6 @@ import {
     MaterialModules,
     CdkTableModule,
     BrowserAnimationsModule,
-    WebBluetoothModule.forRoot(
-      {enableTracing: true}
-    )
   ],
   providers: [
     DatabaseMysqlService,
