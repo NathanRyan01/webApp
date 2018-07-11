@@ -1,16 +1,5 @@
-<div> 
+<div>
   <h2 class="heading">Messaging between users</h2>
-</div>  
-<div> 
-  <button (click)="getDevices()">Get Devices</button>
-</div>
-<div> 
-  <button (click)="turnOnBT()">Turn on Bluetooth</button>
-</div>
-<div> 
-  <button (click)="makeVisible()">Make Visible</button>
-</div> 
-<div> 
-  <input type="text" placeholder= "Connect" [(ngModel)]="model">
-  <button (click)="connect(model)">Connect to Device</button>
-</div> 
+  <a href="#" (click)="getBatteryLevel()">Get Battery Level ({{batteryLevel || 'N/A'}}%)</a> 
+ </div>
+

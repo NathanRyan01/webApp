@@ -32,16 +32,4 @@ export class InternetComponent {
     );
    }
 
-   PostRequest(){
-    var start = performance.now();
-    this.query.postEmail()
-      .subscribe(
-        res => {
-          var end = performance.now();
-          this.postTime = end - start;
-          this.usersMysql = res;},
-        err => {
-      }
-    );
-   }
 }
