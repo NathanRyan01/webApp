@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone  } from '@angular/core';
 import { Router } from "@angular/router";
 import { Database }    from '../Database';
+import { Injectable } from "@angular/core";
 import { CommunicationService } from '../services/communication.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
@@ -11,54 +12,35 @@ import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
    styleUrls: [ './communication.component.css' ]
  })
 
-export class CommunicationComponent implements OnInit { 
-   arr: Database[];
+@Injectable()
+export class CommunicationComponent { 
+   arr: Database[]
    constructor(public _zone: NgZone, public chat: CommunicationService) { }
-
-   batteryLevel: string = '--';
-   device: any = {};
-
-ngOnInit() {
-   this.getDeviceStatus();
-   this.streamValues();
-}
-
-streamValues() {
-   this.chat.streamValues().subscribe(this.showBatteryLevel.bind(this));
- }
+   support = "Bluetooth is supported by this browser"
 
  getDeviceStatus() {
-   this.chat.getDevice().subscribe(
-     (device) => {
+    if (!navigator.bluetooth) {
+      this.support = 'Web Bluetooth API is not available in browser.';
+      return
+    }
+    navigator.bluetooth.requestDevice({
+      acceptAllDevices: true,
+    })
+    .then(device => {
+      console.log(device);
+      connect(device);
+    })
+    .then(server => { /* ... */ })
+    .catch(error => { console.log(error); });
 
-       if(device) {
-         this.device = device;
-       }
-       else {
-         // device not connected or disconnected
-         this.device = null;
-         this.batteryLevel = '--';
-       }
-     }
-   );
+    function connect(d){
+      console.log('Connecting to Bluetooth Device...');
+      return d.gatt.connect().then(server => {
+        console.log('> Bluetooth Device connected');
+      });
+    }
  }
 
- getFakeValue() {
-   this.chat.getFakeValue();
- }
-
- getBatteryLevel() {
-   return this.chat.getBatteryLevel().subscribe(this.showBatteryLevel.bind(this));
- }
-
- showBatteryLevel(value: number) {
-
-   // force change detection
-   this._zone.run( () =>  {
-     console.log('Reading battery level %d', value);
-     this.batteryLevel = ''+value;
-   });
-}
 
 }
 

@@ -14,10 +14,10 @@ export class XMLService {
 
     URL = "http://localhost/file.php";
 
-
-    public getXMLData() {
-        return this._http.get(this.URL,{})
-          .pipe(map(rep => rep.json()));         
+    public getXMLData(value) {
+        return this._http.post(this.URL,{value},this.options)
+          .pipe(map(rep => rep.json()));          
     }
+
 
 }

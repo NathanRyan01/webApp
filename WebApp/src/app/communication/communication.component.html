@@ -1,5 +1,8 @@
 <div>
-  <h2 class="heading">Messaging between users</h2>
-  <a href="#" (click)="getBatteryLevel()">Get Battery Level ({{batteryLevel || 'N/A'}}%)</a> 
- </div>
+  <h2 class="heading">Bluetooth</h2>
+  <button (click)="getDeviceStatus()">Get BLE Devices</button>
+</div>
 
+<div>
+  <p>{{support}}</p>
+</div>

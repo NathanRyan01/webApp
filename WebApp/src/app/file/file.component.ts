@@ -25,9 +25,9 @@ export class FileComponent{
     
   }
 
-  getList(){
+  getXMLParser(value){
     var start = performance.now();
-    this.xml.getXMLData().subscribe(
+    this.xml.getXMLData(value).subscribe(
       res => {
             var end = performance.now();
             this.listTime = end - start;

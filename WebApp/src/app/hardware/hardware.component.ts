@@ -24,7 +24,7 @@ export class HardwareComponent {
   width;
   height;
   orientation;
-  browser;
+  device;
   stream: MediaStream;
   locationTime;
   imageTime;
@@ -131,15 +131,6 @@ export class HardwareComponent {
     else {
         return false;
     }
-  }
-
-  ScreenInfo(){
-    var start = performance.now();
-    this.width = window.screen.width;
-    this.height = window.screen.height;
-    this.browser = navigator.userAgent;
-    var end = performance.now();
-    this.windowTime = end - start;
   }
   
 }

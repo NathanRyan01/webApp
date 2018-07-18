@@ -1,5 +1,7 @@
 // https://github.com/manekinekko/angular-web-bluetooth/blob/master/src/app/battery-level/battery-level.service.ts
 // npm i @types/web-bluetooth
+// #enable-experimental-web-platform-features
+// https://github.com/WebBluetoothCG/web-bluetooth/blob/gh-pages/implementation-status.md
 import { Injectable } from '@angular/core';
 import { map, mergeMap } from 'rxjs/operators';
 import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';

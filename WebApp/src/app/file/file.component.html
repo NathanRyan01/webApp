@@ -6,8 +6,31 @@
     </div>
     </ol>     
   </div>
+
 <div>
-    <button (click)="getList()">Get List</button>
-    <p>The total time to get the list from the xml file: {{listTime}} milliseconds</p>
+    <button (click)="getXMLParser(100)">Get 100 Records</button>
+    <div>
+        <p>The total time to get the list from the xml file: {{listTime}} milliseconds</p>
+    </div>
 </div>
 
+<div>
+    <button (click)="getXMLParser(1000)">Get 1000 Records</button>
+    <div>
+        <p>The total time to get the list from the xml file: {{listTime}} milliseconds</p>
+    </div>
+</div>
+
+<div>
+    <button (click)="getXMLParser(10000)">Get 10000 Records</button>
+    <div>
+        <p>The total time to get the list from the xml file: {{listTime}} milliseconds</p>
+    </div>
+</div>
+
+<div>
+    <button (click)="getXMLParser(100000)">Get 100000 Records</button>
+    <div>
+        <p>The total time to get the list from the xml file: {{listTime}} milliseconds</p>
+    </div>    
+</div>
