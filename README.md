@@ -13,6 +13,6 @@ These approaches are web-based, native and hybrid based development.
 Different scenarios such as interactions with a database, the computation involved during matrix multiplication and accessing a devices filesystem 
 will be developed and compared. 
 
-The testing tool used for performance is called GameBench. The development time will be captured by the coder. 
+The testing tool used for performance is called GameBench. The development time will be captured by the coder with timer functions and ngrok.
 
 The Usability will be measured using a group of individuals. 
